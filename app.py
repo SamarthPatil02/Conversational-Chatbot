@@ -26,7 +26,7 @@ st.title("Conversational RAG with PDF Uploads and Chat History")
 st.write("Upload PDFs and chat with their content")
 
 # Groq API Key
-api_key = st.text_input("Enter your Groq API Key:", type="password")
+api_key = st.text_input("Enter your API Key:", type="password")
 
 if api_key:
 
