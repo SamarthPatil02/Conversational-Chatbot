@@ -55,10 +55,10 @@ if api_key:
 
         documents = []
 
-        # Load all PDFs
+        # Load all PDF
         for uploaded_file in uploaded_files:
 
-            temp_pdf = f"./temp_{uploaded_file.name}"
+            temp_pdf = f"./temp_{os.path.basename(uploaded_file.name)}"
 
             with open(temp_pdf, "wb") as file:
                 file.write(uploaded_file.getvalue())
@@ -67,6 +67,8 @@ if api_key:
             docs = loader.load()
 
             documents.extend(docs)
+
+            os.remove(temp_pdf)  # delete the temporary copy after loading
 
         # Split Documents
         text_splitter = RecursiveCharacterTextSplitter(
