@@ -22,7 +22,7 @@ embedding = HuggingFaceEmbeddings(
 )
 
 # Streamlit UI
-st.title("Conversational RAG with PDF Uploads and Chat History")
+st.title("Conversational RAG Chatbot")
 st.write("Upload PDFs and chat with their content")
 
 # Groq API Key
